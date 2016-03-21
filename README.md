@@ -1,8 +1,8 @@
 # Directory contents
 
-[rdata](rdata) Key data sets from MML in RData format
+[rdata](rdata) Key data sets from Geographical information system of the Commission (GISCO) in RData format
 
-[rscripts](rscripts) Automated scripts that were used to convert MML GIS data into RData format.
+[rscripts](rscripts) Automated scripts that were used to convert Geographical information system of the Commission (GISCO) GIS data into RData format.
 
 This repository is associated with Eurostat-packege within the rOpenGov project.
 
