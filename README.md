@@ -6,7 +6,7 @@
 
 This repository is associated with Eurostat-packege within the rOpenGov project.
 
-Available data sets in R
+# Available data sets in R
 
 Currently these map collections are available as RData files:
 
