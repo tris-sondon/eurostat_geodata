@@ -88,7 +88,13 @@ if (!file.exists("./rdata/NUTS_2013_60M_SH.RData")){
     NUTS_2013_60M_SH_SPDF <- readOGR(dsn = "./rawdata/NUTS_2013_60M_SH/data", layer = "NUTS_RG_60M_2013", verbose=FALSE)
     save(NUTS_2013_60M_SH_SPDF, file="./rdata/NUTS_2013_60M_SH_SPDF.RData")
   } else load("./rdata/NUTS_2013_60M_SH_SPDF.RData")
+  # into KML
   shape <- NUTS_2013_60M_SH_SPDF
+  shape <- spTransform(shape, CRS("+proj=longlat +datum=WGS84"))
+  writeOGR(shape, dsn="./rdata/NUTS_2013_60M_SH.kml", layer="", driver="KML", encoding="UTF-8")
+  # geoJSON
+  # writeOGR(shape, dsn="./rdata/NUTS_2013_60M_SH.geojson", layer="", driver="GeoJSON", encoding="UTF-8")
+  # fortify into data.frame for ggplot2
   shape$id <- rownames(shape@data)
   map.points <- fortify(shape, region = "id")
   map.df <- merge(map.points, shape, by = "id")
@@ -103,6 +109,11 @@ if (!file.exists("./rdata/NUTS_2013_60M_SH.RData")){
     NUTS_2013_20M_SH_SPDF <- readOGR(dsn = "./rawdata/NUTS_2013_20M_SH/data", layer = "NUTS_RG_20M_2013", verbose=FALSE)
     save(NUTS_2013_20M_SH_SPDF, file="./rdata/NUTS_2013_20M_SH_SPDF.RData")
   } else load("./rdata/NUTS_2013_20M_SH_SPDF.RData")
+  # into KML
+  shape <- NUTS_2013_20M_SH_SPDF
+  shape <- spTransform(shape, CRS("+proj=longlat +datum=WGS84"))
+  writeOGR(shape, dsn="./rdata/NUTS_2013_20M_SH.kml", layer="", driver="KML", encoding="UTF-8")
+  # fortify into data.frame for ggplot2
   shape <- NUTS_2013_20M_SH_SPDF
   shape$id <- rownames(shape@data)
   map.points <- fortify(shape, region = "id")
@@ -118,7 +129,11 @@ if (!file.exists("./rdata/NUTS_2013_60M_SH.RData")){
     NUTS_2013_10M_SH_SPDF <- readOGR(dsn = "./rawdata/NUTS_2013_10M_SH/data", layer = "NUTS_RG_10M_2013", verbose=FALSE)
     save(NUTS_2013_10M_SH_SPDF, file="./rdata/NUTS_2013_10M_SH_SPDF.RData")
   } else load("./rdata/NUTS_2013_10M_SH_SPDF.RData")
+  # into KML
   shape <- NUTS_2013_10M_SH_SPDF
+  shape <- spTransform(shape, CRS("+proj=longlat +datum=WGS84"))
+  writeOGR(shape, dsn="./rdata/NUTS_2013_10M_SH.kml", layer="", driver="KML", encoding="UTF-8")
+  # fortify into data.frame for ggplot2
   shape$id <- rownames(shape@data)
   map.points <- fortify(shape, region = "id")
   map.df <- merge(map.points, shape, by = "id")
@@ -133,7 +148,11 @@ if (!file.exists("./rdata/NUTS_2013_60M_SH.RData")){
     NUTS_2013_03M_SH_SPDF <- readOGR(dsn = "./rawdata/NUTS_2013_03M_SH/data", layer = "NUTS_RG_03M_2013", verbose=FALSE)
     save(NUTS_2013_03M_SH_SPDF, file="./rdata/NUTS_2013_03M_SH_SPDF.RData")
   } else load("./rdata/NUTS_2013_03M_SH_SPDF.RData")
+  # into KML
   shape <- NUTS_2013_03M_SH_SPDF
+  shape <- spTransform(shape, CRS("+proj=longlat +datum=WGS84"))
+  writeOGR(shape, dsn="./rdata/NUTS_2013_03M_SH.kml", layer="", driver="KML", encoding="UTF-8")
+  # fortify into data.frame for ggplot2
   shape$id <- rownames(shape@data)
   map.points <- fortify(shape, region = "id")
   map.df <- merge(map.points, shape, by = "id")
@@ -148,7 +167,12 @@ if (!file.exists("./rdata/NUTS_2013_60M_SH.RData")){
     NUTS_2013_01M_SH_SPDF <- readOGR(dsn = "./rawdata/NUTS_2013_01M_SH/data", layer = "NUTS_RG_01M_2013", verbose=FALSE)
     save(NUTS_2013_01M_SH_SPDF, file="./rdata/NUTS_2013_01M_SH_SPDF.RData")
   } else load("./rdata/NUTS_2013_01M_SH_SPDF.RData")
+  # into KML
   shape <- NUTS_2013_01M_SH_SPDF
+  shape <- spTransform(shape, CRS("+proj=longlat +datum=WGS84"))
+  writeOGR(shape, dsn="./rdata/NUTS_2013_01M_SH.kml", layer="", driver="KML", encoding="UTF-8")
+  # fortify into data.frame for ggplot2
+  
   shape$id <- rownames(shape@data)
   map.points <- fortify(shape, region = "id")
   map.df <- merge(map.points, shape, by = "id")
